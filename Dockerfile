@@ -1,6 +1,8 @@
-FROM python:3.10-buster
-RUN git clone https://github.com/stijn-kramer/CTF-werkzeug_pin_crack.git
-WORKDIR /CTF-werkzeug_pin_crack
-RUN pip install .
+FROM python:3.6-buster
+WORKDIR /home/CTF-werkzeug_pin_crack
+COPY src .
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY challenge/note.txt /home
 EXPOSE 5000
 CMD ["python", "main.py"]
