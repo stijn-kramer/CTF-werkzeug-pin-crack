@@ -1,8 +1,13 @@
 FROM python:3.6-buster
-WORKDIR /home/CTF-werkzeug_pin_crack
-COPY src .
+RUN useradd -ms /bin/bash htmlfetcher
+
+USER htmlfetcher
+WORKDIR /home/htmlfetcher
+
+COPY src ./CTF-werkzeug_pin_crack
 COPY requirements.txt .
 RUN pip install -r requirements.txt
-COPY challenge/note.txt /home
+COPY challenge/note.txt ../
+
 EXPOSE 5000
-CMD ["python", "main.py"]
+CMD ["python", "./CTF-werkzeug_pin_crack/main.py"]

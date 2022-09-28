@@ -2,15 +2,15 @@ import hashlib
 from itertools import chain
 
 probably_public_bits = [
-    'root',  # username
+    'htmlfetcher',  # username
     'flask.app',  # modname
     'Flask',  # getattr(app, '__name__', getattr(app.__class__, '__name__'))
-    '/usr/local/lib/python3.6/site-packages/flask/app.py'  # getattr(mod, '__file__', None),
+    '/home/htmlfetcher/.local/lib/python3.6/site-packages/flask/app.py'  # getattr(mod, '__file__', None),
 ]
 
 private_bits = [
-    '2485723361282',  # str(uuid.getnode()),  /sys/class/net/ens33/address
-    '96cec10d3d9307792745ec3b85c896209d3affb6ff20079f363420bf847e01b5e6490be4df01a25f74c9658f59bd84e5'  # get_machine_id(), /etc/machine-id
+    '2485378023426',  # str(uuid.getnode()),  /sys/class/net/ens33/address
+    '96cec10d3d9307792745ec3b85c896207c248d90037505adc07822804fc5b2289664e4be47666dfd829d8713da6ba1bf'  # get_machine_id(), /etc/machine-id
 ]
 
 h = hashlib.md5()
