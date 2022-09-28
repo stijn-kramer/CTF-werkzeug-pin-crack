@@ -49,19 +49,11 @@ tags:
 # Accepts dictionaries or strings
 hints:
     - {
-        content: "Can you trigger an exception?",
-        cost: 10
-    }
-    - {
-      content: "Can you find the debug console?",
-      cost: 50
-    }
-    - {
       content: "Are you sure it only works with https://?",
       cost: 50
     }
     - {
-      content: "Can you find a way to generate the PIN yourself?",
+      content: "Can you find a way to generate the PIN for the debug console yourself?",
       cost: 150
     }
 
